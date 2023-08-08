@@ -17,6 +17,25 @@ public class Prom {
                 throw new IllegalArgumentException("Введено неверное количество данных");
             }
 
+            String lastName = data[0];
+            String firstName = data[1];
+            String middleName = data[2];
+            String birthDate = data[3];
+            String phoneNumber = data[4];
+            String gender = data[5];
+
+            // Проверки формата введённых данных
+            if (!birthDate.matches("\\d{2}.\\d{2}.\\d{4}")) {
+                throw new IllegalArgumentException("Неверный формат даты рождения");
+            }
+
+            if (!phoneNumber.matches("\\d+")) {
+                throw new IllegalArgumentException("Неверный формат номера телефона");
+            }
+
+            if (!gender.matches("[fm]")) {
+                throw new IllegalArgumentException("Неверный формат пола");
+            }
 
         }
     }
