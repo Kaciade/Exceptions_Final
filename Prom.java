@@ -10,3 +10,14 @@ public class Prom {
             Scanner scanner = new Scanner(System.in);
             String input = scanner.nextLine();
             scanner.close();
+
+            // Проверка количества введённых данных
+            String[] data = input.split(" ");
+            if (data.length != 6) {
+                throw new IllegalArgumentException("Введено неверное количество данных");
+            }
+
+
+        }
+    }
+}
