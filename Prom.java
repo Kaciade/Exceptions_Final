@@ -1,5 +1,4 @@
 import java.io.FileWriter;
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Prom {
@@ -37,6 +36,21 @@ public class Prom {
                 throw new IllegalArgumentException("Неверный формат пола");
             }
 
+            // Создание файла и запись данных
+            String fileName = "Output.txt";
+            FileWriter writer = new FileWriter(fileName, true);
+            String output = "Фамилия: " + lastName + "\n" +
+                            "Имя: " + firstName + "\n" +
+                            "Отчество: " + middleName + "\n" +
+                            "Дата рождения: " + birthDate + "\n" +
+                            "Номер телефона: " + phoneNumber + "\n" +
+                            "Пол: " + (gender.equals("f") ? "Женский" : "Мужской") + "\n\n";
+            writer.write(output);
+            writer.close();
+
+            System.out.println("Данные успешно записаны в файл " + fileName);
+        } catch (Exception e) {
+            System.err.println("Произошла ошибка: " + e.getMessage());
         }
     }
 }
