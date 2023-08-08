@@ -37,14 +37,9 @@ public class Prom {
             }
 
             // Создание файла и запись данных
-            String fileName = "Output.txt";
+            String fileName = lastName + ".txt";
             FileWriter writer = new FileWriter(fileName, true);
-            String output = "Фамилия: " + lastName + "\n" +
-                            "Имя: " + firstName + "\n" +
-                            "Отчество: " + middleName + "\n" +
-                            "Дата рождения: " + birthDate + "\n" +
-                            "Номер телефона: " + phoneNumber + "\n" +
-                            "Пол: " + (gender.equals("f") ? "Женский" : "Мужской") + "\n\n";
+            String output = lastName + firstName + middleName + birthDate + " " + phoneNumber + gender + "\n";
             writer.write(output);
             writer.close();
 
